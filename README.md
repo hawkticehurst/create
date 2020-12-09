@@ -21,7 +21,7 @@ create <project-name> <technology-flag>
 --node          Create a Node + Express project.
 --python        Create a Python Poetry project.
 --go            Create a basic Golang project.
---rust          Create a basic Cargo project.
+--rust          Create a basic Rust project.
 --electron      Create a basic Electron project.
 ```
 

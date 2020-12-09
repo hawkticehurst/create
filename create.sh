@@ -25,7 +25,7 @@ function printTechnologyFlags {
     printf "    --node          Create a Node + Express project.\n"
     printf "    --python        Create a Python Poetry project.\n"
     printf "    --go            Create a basic Golang project.\n"
-    printf "    --rust          Create a basic Cargo project.\n"
+    printf "    --rust          Create a basic Rust project.\n"
     printf "    --electron      Create a basic Electron project.\n"
 }
 
