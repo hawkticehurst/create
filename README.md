@@ -1,6 +1,6 @@
 # Create CLI
 
-A tiny CLI for creating boilerplate software projects.
+A tiny CLI for creating new software projects using both popular and custom boilerplates.
 
 ## Command Usage 
 ```
