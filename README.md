@@ -28,7 +28,7 @@ create <project-name> <technology-flag>
 ## Custom Templates
 Custom templates can be defined in the [templates](./templates) directory and downloaded locally.
 
-A `TEMPLATEPATH` must also be correctly set within `create.sh` once downloaded locally.
+The `TEMPLATEPATH` variable must also be correctly set within `create.sh` once downloaded locally.
 
 ## License
 
