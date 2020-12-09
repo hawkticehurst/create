@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export TEMPLATEPATH=~/Documents/programming/bin/templates
+
 red=$'\e[0;31m'
 grn=$'\e[0;32m'
 blu=$'\e[0;34m'
@@ -38,8 +40,6 @@ if [ "$1" = "--help" ]; then
     printTechnologyFlags
     exit
 fi
-
-export TEMPLATEPATH=~/Documents/programming/bin/templates
 
 # ------ Project Set Up Functions ------ #
 
