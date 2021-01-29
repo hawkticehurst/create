@@ -44,8 +44,12 @@ fi
 
 # ------ Project Set Up Functions ------ #
 
+function initGit {
+    git init
+    cp "$TEMPLATEPATH/git/.gitignore" .
+}
+
 function initNpm {
-    printf "📥$grn Initializing NPM$white\n"
     npm init -y
 }
 
@@ -105,6 +109,7 @@ function setUpSvetleTypeScript {
 function setUpFASTTypeScript {
     mkdir $1
     cd $1
+    initGit
     initNpm
     npmAddScript "start" "webpack serve --watch --hot"
     npmAddScript "build" "webpack --mode=production"
@@ -116,7 +121,6 @@ function setUpFASTTypeScript {
     cp "$TEMPLATEPATH/fast/index.html" .
     cp "$TEMPLATEPATH/fast/tsconfig.json" .
     cp "$TEMPLATEPATH/fast/webpack.config.js" .
-    printf "\n"
     printf "🎊$grn FAST Project Created!$white\n"
     printf "\n"
 }
