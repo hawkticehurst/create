@@ -9,8 +9,8 @@ import {
 const template = html<CounterCard>`
   <div class="container">
     <h1>The count is: <span>${(x) => x.count}</span></h1>
-    <button @click=${(x) => x.incrementCount()}>+</button>
     <button @click=${(x) => x.decrementCount()}>–</button>
+    <button @click=${(x) => x.incrementCount()}>+</button>
   </div>
 `;
 
