@@ -4,13 +4,30 @@
     <meta charset="utf-8" />
     <title>FAST Template Project</title>
     <script type="module" src="dist/bundle.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :not(:defined) {
         visibility: hidden;
       }
+
+      body {
+        font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: hsl(159, 72%, 55%);
+      }
     </style>
   </head>
   <body>
-    <hello-world></hello-world>
+    <counter-card></counter-card>
   </body>
 </html>
