@@ -31,6 +31,13 @@ Custom templates can be defined in the [templates](./templates) directory and do
 
 The `TEMPLATEPATH` variable must also be correctly set within `create.sh` once downloaded locally.
 
+## Making The CLI An Executable 
+
+1. Navigate to directory where this script lives
+2. Make sure directory is exported to PATH
+3. Type `chmod u+x create.sh` into terminal
+4. Add alias to shell config file: `alias create='sh create.sh'`
+
 ## License
 
 [MIT](LICENSE)
