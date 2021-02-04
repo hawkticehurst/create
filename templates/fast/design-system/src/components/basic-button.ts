@@ -32,7 +32,7 @@ import { Button, ButtonTemplate as template } from "@microsoft/fast-foundation";
 
 /**
  * ---- ❗️ Important Note ❗️ ----
- * This <foundation-button> element is the exact same as the one generated using the --fast-fo flag,
+ * This <basic-button> element is the exact same as the <foundation-button> generated using the --fast-fo flag,
  * except in this case we are now using CSS variables defined by the Design System Provider for 
  * border-radius and background-color.
  */
