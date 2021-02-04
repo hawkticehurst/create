@@ -69,6 +69,25 @@ function createReadme {
     echo $1 >> README.md
 }
 
+function printSuccessMessage {
+    printf "\n"
+    printf "Created $1 at $(pwd)/$1\n"
+    printf "Inside that directory, you can run several commands:\n"
+    printf "\n"
+    printf "    $cyn npm start$white\n"
+    printf "        Starts the development server.\n"
+    printf "\n"
+    printf "    $cyn npm run build$white\n"
+    printf "        Bundles the app into static files for production.\n"
+    printf "\n"
+    printf "You can begin by typing:\n"
+    printf "\n"
+    printf "    $cyn cd $1$white\n"
+    printf "    $cyn npm start$white\n"
+    printf "\n"
+    printf "Have fun!\n"
+}
+
 # ---- React Setup Functions ----
 
 function setUpReact {
@@ -130,7 +149,7 @@ function setUpFASTElement {
     cp "$TEMPLATEPATH/fast/tsconfig.json" .
     cp "$TEMPLATEPATH/fast/webpack.config.js" .
     printf "🎊$grn FAST Element Project Created!$white\n"
-    printf "\n"
+    printSuccessMessage $1
 }
 
 function setUpFASTFoundation {
@@ -149,7 +168,7 @@ function setUpFASTFoundation {
     cp "$TEMPLATEPATH/fast/tsconfig.json" .
     cp "$TEMPLATEPATH/fast/webpack.config.js" .
     printf "🎊$grn FAST Foundation Project Created!$white\n"
-    printf "\n"
+    printSuccessMessage $1
 }
 
 function setUpFASTDesignSystem {
@@ -168,7 +187,7 @@ function setUpFASTDesignSystem {
     cp "$TEMPLATEPATH/fast/tsconfig.json" .
     cp "$TEMPLATEPATH/fast/webpack.config.js" .
     printf "🎊$grn FAST Design System Project Created!$white\n"
-    printf "\n"
+    printSuccessMessage $1
 }
 
 # ---- Vanilla Web Setup Function ----
