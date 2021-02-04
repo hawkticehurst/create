@@ -58,14 +58,14 @@ const styles = css`
 `;
 
 @customElement({
-  name: "foundation-button",
+  name: "basic-button",
   template,
   styles,
   shadowOptions: {
     delegatesFocus: true,
   },
 })
-export class FoundationButton extends Button {
+export class BasicButton extends Button {
   /**
    * As it stands this Button will render with the custom styles defined above and include the default
    * behavior defined in the import Button class.
