@@ -28,17 +28,17 @@ create <project-name> <technology-flag>
 --electron      Create a basic Electron project.
 ```
 
+## Setting Up The CLI
+In order to use the CLI a couple steps must be taken:
+
+1. Navigate to directory where the `create.sh` script lives
+2. Update the `TEMPLATEPATH` variable in `create.sh` to reflect your own local file system
+3. Open a terminal and navigate to this directory and run the command `chmod u+x create.sh`
+4. Open your shell config file and make sure this project directory is exported to PATH
+5. Finally, add an alias to the shell config file: `alias create='sh create.sh'`
+
 ## Custom Templates
 Custom templates can be defined in the [templates](./templates) directory and downloaded locally.
-
-The `TEMPLATEPATH` variable must also be correctly set within `create.sh` once downloaded locally.
-
-## Making The CLI An Executable 
-
-1. Navigate to directory where this script lives
-2. Make sure directory is exported to PATH
-3. Type `chmod u+x create.sh` into terminal
-4. Add alias to shell config file: `alias create='sh create.sh'`
 
 ## License
 
