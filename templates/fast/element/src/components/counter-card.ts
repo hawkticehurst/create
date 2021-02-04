@@ -1,24 +1,30 @@
 /**
- * In this file we are importing the FAST Element utility functions which can be used to create
- * a custom web component from scratch. Think of FAST Element as being in the same category as
- * a UI framekwork/librarie like Vue or React.
+ * In this file, we create a simple <counter-card> component that can increment and decrement 
+ * a stateful count.
+ * 
+ * To do this we are importing the FAST Element utility functions which can be used to create a 
+ * custom web component from scratch. Think of FAST Element as being in the same category as
+ * a UI framework/library like Vue or React.
  *
- * Below we are importing FASTElement which is a minimal base class for FAST Elements that
- * also provides static helpers for working with FAST Elements.
+ * --- FASTElement Import ----
+ * Below we import FASTElement which is a minimal base class for FAST Elements that also 
+ * provides static helpers for working with FAST Elements.
  *
- * We also import the customElement, html, css, and observable utility functions. With these
- * we can define a template for the component (read: the HTML structure of our component), the
- * custom styles that should be applied to the component, and define any state that should be
- * observed within our component.
+ * ---- Utility Function Imports ----
+ * We also import the html and css utility functions. With these we can define a template for 
+ * the component (read: the HTML structure of our component) and the custom styles that should 
+ * be applied to the component.
  *
- * With all above pieces we can create a class definition that extends FASTElement and defines
- * any custom behavior or life cycle methods that the component should have. From there we use the
- * customElement function to combine all the pieces (HTML template, styles, and class behavior)
- * to create a new custom element. 🎊
+ * ---- Class Definition & State ----
+ * Additionally, a class definition that extends FASTElement is created. This defines any state 
+ * that should be observed (reference the imported observable utility function), any life cycle 
+ * methods, or any other custom behavior that the component should have. 
+ * 
+ * ---- Putting It All Together ----
+ * With all the above pieces, we use the imported customElement utility function to combine/associate 
+ * all the pieces (i.e. HTML template, styles, and class behavior) to create a new custom element. 🎊
  *
- * All in all these pieces are used below to create a simple Counter component that can increment
- * and decrement a stateful count.
- *
+ * ---- More Resources ----
  * For more information about what was discussed here and information on other utilities that FAST 
  * Element defines check the documentation here:
  * 
