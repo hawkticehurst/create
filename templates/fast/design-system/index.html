@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>FAST Foundation Template Project</title>
+    <title>FAST Design System Template Project</title>
 
     <!-- FAST Component Import -->
     <script type="module" src="dist/bundle.js"></script>
@@ -24,10 +24,30 @@
         height: 100vh;
         background-color: #1e1e1e;
       }
+
+      foundation-button {
+        padding: 1rem;
+      }
     </style>
   </head>
   <body>
-    <foundation-button>Ooh festive. A button.</foundation-button>
+    <!-- 
+      Currently our design system provider overrides the corner-radius default value of 0.
+      Feel free to change the value and see what happens or even remove the attribute all together.
+
+      Additionally, we can the following attribute to override the accent base color of elements 
+      inside the provider:
+          
+        accent-base-color="green"
+
+      By copying and pasting the above as an attribute of the basic-design-system-provider all the 
+      buttons inside the provider should turn green.
+     -->
+    <basic-design-system-provider corner-radius="8" use-defaults>
+      <foundation-button>Ooh festive. A button.</foundation-button>
+      <foundation-button>Ooh festive. A button.</foundation-button>
+      <foundation-button>Ooh festive. A button.</foundation-button>
+    </basic-design-system-provider>
 
     <!-- A quick script that gives the button some behavior when clicked. Feel free to remove this. -->
     <script>

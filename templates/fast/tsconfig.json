@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -13,12 +14,7 @@
     "strict": true,
     "outDir": "dist/build",
     "rootDir": "src",
-    "lib": [
-      "dom",
-      "esnext"
-    ]
+    "lib": ["dom", "esnext"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

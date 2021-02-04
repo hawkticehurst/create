@@ -1,3 +1,4 @@
+import { BasicDesignSystemProvider } from "./design-system-provider/BasicDesignSystemProvider";
 import { FoundationButton } from "./components/foundation-button";
 
 /*
@@ -5,4 +6,5 @@ import { FoundationButton } from "./components/foundation-button";
  * This ensures that tree-shaking doesn't remove these components from the bundle.
  * There are multiple ways to prevent tree shaking, of which this is one.
  */
+BasicDesignSystemProvider;
 FoundationButton;

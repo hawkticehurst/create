@@ -23,16 +23,25 @@ import { Button, ButtonTemplate as template } from "@microsoft/fast-foundation";
  * These classes (and other attributes) are defined on the button.template.ts file of the FAST Foundation button.
  * https://github.com/microsoft/fast/blob/master/packages/web-components/fast-foundation/src/button/button.template.ts
  *
- * For any other FAST Foundation element go find it's associated {componentName}.template.ts file to discover what 
+ * For any other FAST Foundation element go find it's associated {componentName}.template.ts file to discover what
  * classes and attributes have been defined and can be used for styling purposes.
  *
  * Finally, for more information on how to style FAST components reference the following documentation:
  * https://www.fast.design/docs/fast-element/leveraging-css
  */
+
+/**
+ * ---- ❗️ Important Note ❗️ ----
+ * This <foundation-button> element is the exact same as the one generated using the --fast-fo flag,
+ * except in this case we are now using CSS variables defined by the Design System Provider for 
+ * border-radius and background-color.
+ */
+
 const styles = css`
   .control {
+    border-radius: calc(var(--corner-radius) * 1px);
     color: white;
-    background-color: #0e639c;
+    background-color: var(--accent-base-color);
     border: none;
     padding: 10px 10px;
     box-sizing: border-box;
@@ -58,9 +67,9 @@ const styles = css`
 })
 export class FoundationButton extends Button {
   /**
-   * As it stands this Button will render with the custom styles defined above and include the default 
+   * As it stands this Button will render with the custom styles defined above and include the default
    * behavior defined in the import Button class.
-   * 
+   *
    * An implementation/reference to this default behavior can be found here:
    * https://github.com/microsoft/fast/blob/master/packages/web-components/fast-foundation/src/button/button.ts
    *
