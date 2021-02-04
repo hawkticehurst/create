@@ -1,5 +1,5 @@
 import { BasicDesignSystemProvider } from "./design-system-provider/BasicDesignSystemProvider";
-import { FoundationButton } from "./components/foundation-button";
+import { BasicButton } from "./components/basic-button";
 
 /*
  * Import and declare any component you want to use in index.html.
@@ -7,4 +7,4 @@ import { FoundationButton } from "./components/foundation-button";
  * There are multiple ways to prevent tree shaking, of which this is one.
  */
 BasicDesignSystemProvider;
-FoundationButton;
+BasicButton;
