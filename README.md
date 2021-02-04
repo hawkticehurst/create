@@ -17,7 +17,9 @@ create <project-name> <technology-flag>
 --react-ts      Create a React + TypeScript project.
 --svelte        Create a basic Svelte project.
 --svelte-ts     Create a Svelte + TypeScript project.
---fast-ts       Create a FAST Element + TypeScript project.
+--fast-el       Create a FAST Element + TypeScript project.
+--fast-fo       Create a FAST Foundation + TypeScript project.
+--fast-ds       Create a FAST Design System + TypeScript project.
 --web           Create a basic vanilla website project.
 --node          Create a Node + Express project.
 --python        Create a Python Poetry project.
