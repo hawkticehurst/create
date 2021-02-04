@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export TEMPLATEPATH=~/Documents/programming/bin/templates
+export TEMPLATEPATH=~/Documents/bin/create/templates
 
 red=$'\e[0;31m'
 grn=$'\e[0;32m'
@@ -23,7 +23,9 @@ function printTechnologyFlags {
     printf "    --react-ts      Create a React + TypeScript project.\n"
     printf "    --svelte        Create a basic Svelte project.\n"
     printf "    --svelte-ts     Create a Svelte + TypeScript project.\n"
-    printf "    --fast-ts       Create a FAST Element + TypeScript project.\n"
+    printf "    --fast-el       Create a FAST Element + TypeScript project.\n"
+    printf "    --fast-fo       Create a FAST Foundation + TypeScript project.\n"
+    printf "    --fast-ds       Create a FAST Design System + TypeScript project.\n"
     printf "    --web           Create a basic vanilla website project.\n"
     printf "    --node          Create a Node + Express project.\n"
     printf "    --python        Create a Python Poetry project.\n"
@@ -42,7 +44,7 @@ if [ "$1" = "--help" ]; then
     exit
 fi
 
-# ------ Project Set Up Functions ------ #
+# ------ Project Setup Functions ------ #
 
 function initGit {
     git init
@@ -67,6 +69,8 @@ function createReadme {
     echo $1 >> README.md
 }
 
+# ---- React Setup Functions ----
+
 function setUpReact {
     npx create-react-app $1 --use-npm
     cd $1
@@ -84,6 +88,8 @@ function setUpReactTypeScript {
     printf "🎊$grn React + TypeScript Project Created!$white\n"
     printf "\n"
 }
+
+# ---- Svelte Setup Functions ----
 
 function setUpSvetle {
     npx degit sveltejs/template $1
@@ -106,24 +112,66 @@ function setUpSvetleTypeScript {
     printf "\n"
 }
 
-function setUpFASTTypeScript {
+# ---- FAST Setup Functions ----
+
+function setUpFASTElement {
     mkdir $1
     cd $1
     initGit
     initNpm
-    npmAddScript "start" "webpack serve --watch --hot"
+    npmAddScript "start" "webpack serve"
     npmAddScript "build" "webpack --mode=production"
     npm install --save @microsoft/fast-element lodash-es
     npm install --save-dev clean-webpack-plugin ts-loader typescript webpack webpack-cli webpack-dev-server
     installPrettier
-    createReadme "# Template FAST Project"
-    cp -R "$TEMPLATEPATH/fast/src" .
-    cp "$TEMPLATEPATH/fast/index.html" .
+    createReadme "# Template FAST Element Project"
+    cp -R "$TEMPLATEPATH/fast/element/src" .
+    cp "$TEMPLATEPATH/fast/element/index.html" .
     cp "$TEMPLATEPATH/fast/tsconfig.json" .
     cp "$TEMPLATEPATH/fast/webpack.config.js" .
-    printf "🎊$grn FAST Project Created!$white\n"
+    printf "🎊$grn FAST Element Project Created!$white\n"
     printf "\n"
 }
+
+function setUpFASTFoundation {
+    mkdir $1
+    cd $1
+    initGit
+    initNpm
+    npmAddScript "start" "webpack serve"
+    npmAddScript "build" "webpack --mode=production"
+    npm install --save @microsoft/fast-element @microsoft/fast-foundation lodash-es
+    npm install --save-dev clean-webpack-plugin ts-loader typescript webpack webpack-cli webpack-dev-server
+    installPrettier
+    createReadme "# Template FAST Foundation Project"
+    cp -R "$TEMPLATEPATH/fast/foundation/src" .
+    cp "$TEMPLATEPATH/fast/foundation/index.html" .
+    cp "$TEMPLATEPATH/fast/tsconfig.json" .
+    cp "$TEMPLATEPATH/fast/webpack.config.js" .
+    printf "🎊$grn FAST Foundation Project Created!$white\n"
+    printf "\n"
+}
+
+function setUpFASTDesignSystem {
+    mkdir $1
+    cd $1
+    initGit
+    initNpm
+    npmAddScript "start" "webpack serve"
+    npmAddScript "build" "webpack --mode=production"
+    npm install --save @microsoft/fast-element @microsoft/fast-foundation lodash-es
+    npm install --save-dev clean-webpack-plugin ts-loader typescript webpack webpack-cli webpack-dev-server
+    installPrettier
+    createReadme "# Template FAST Design System Project"
+    cp -R "$TEMPLATEPATH/fast/design-system/src" .
+    cp "$TEMPLATEPATH/fast/design-system/index.html" .
+    cp "$TEMPLATEPATH/fast/tsconfig.json" .
+    cp "$TEMPLATEPATH/fast/webpack.config.js" .
+    printf "🎊$grn FAST Design System Project Created!$white\n"
+    printf "\n"
+}
+
+# ---- Vanilla Web Setup Function ----
 
 function setUpVanillaWeb {
     mkdir $1
@@ -145,6 +193,8 @@ function setUpVanillaWeb {
     printf "\n"
 }
 
+# ---- Node Setup Function ----
+
 function setUpNode {
     mkdir $1
     cd $1
@@ -160,6 +210,8 @@ function setUpNode {
     printf "\n"
 }
 
+# ---- Python Setup Function ----
+
 function setUpPython {
     poetry new --src $1
     cd $1
@@ -173,6 +225,8 @@ function setUpPython {
     printf "🎊$grn Python Project Created!$white\n"
     printf "\n"
 }
+
+# ---- Golang Setup Function ----
 
 function setUpGo {
     mkdir $1
@@ -188,6 +242,8 @@ function setUpGo {
     printf "\n"
 }
 
+# ---- Rust Setup Function ----
+
 function setUpRust {
     cargo new $1
     cd $1
@@ -195,6 +251,8 @@ function setUpRust {
     printf "🎊$grn Rust Project Created!$white\n"
     printf "\n"
 }
+
+# ---- Electron Setup Function ----
 
 function setUpElectron {
     npx create-electron-app $1
@@ -214,8 +272,12 @@ elif [ "$2" = "--svelte" ]; then
     setUpSvetle $1
 elif [ "$2" = "--svelte-ts" ]; then 
     setUpSvetleTypeScript $1
-elif [ "$2" = "--fast-ts" ]; then 
-    setUpFASTTypeScript $1
+elif [ "$2" = "--fast-el" ]; then 
+    setUpFASTElement $1
+elif [ "$2" = "--fast-fo" ]; then 
+    setUpFASTFoundation $1
+elif [ "$2" = "--fast-ds" ]; then 
+    setUpFASTDesignSystem $1
 elif [ "$2" = "--web" ]; then
     setUpVanillaWeb $1
 elif [ "$2" = "--node" ]; then
@@ -234,8 +296,3 @@ else
     printTechnologyFlags
     exit
 fi
-
-# ------ Open Project ------ #
-
-printf "📤$grn Opening project in VS Code...$white\n"
-code .
