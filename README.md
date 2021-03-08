@@ -20,7 +20,8 @@ create <project-name> <technology-flag>
 --fast-el       Create a FAST Element + TypeScript project.
 --fast-fo       Create a FAST Foundation + TypeScript project.
 --fast-ds       Create a FAST Design System + TypeScript project.
---web           Create a basic vanilla website project.
+--web           Create a basic vanilla web project.
+--web-ts        Create a basic vanilla TypeScript web project.
 --node          Create a Node + Express project.
 --python        Create a Python Poetry project.
 --go            Create a basic Golang project.
