@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export TEMPLATEPATH=~/Documents/bin/create/templates
+export TEMPLATEPATH=~/Documents/programming/bin/templates
 
 red=$'\e[0;31m'
 grn=$'\e[0;32m'
@@ -27,6 +27,7 @@ function printTechnologyFlags {
     printf "    --fast-fo       Create a FAST Foundation + TypeScript project.\n"
     printf "    --fast-ds       Create a FAST Design System + TypeScript project.\n"
     printf "    --web           Create a basic vanilla website project.\n"
+    printf "    --web-ts        Create a basic vanilla TypeScript website project.\n"
     printf "    --node          Create a Node + Express project.\n"
     printf "    --python        Create a Python Poetry project.\n"
     printf "    --go            Create a basic Golang project.\n"
@@ -212,6 +213,32 @@ function setUpVanillaWeb {
     printf "\n"
 }
 
+# ---- Vanilla TypeScript Web Setup Function ----
+
+function setUpVanillaTypeScriptWeb {
+    mkdir $1
+    cd $1
+    printf "📝$grn Setting Up Vanilla TypeScript Web Template$white\n"
+    cp "$TEMPLATEPATH/README.md" .
+    cp "$TEMPLATEPATH/web-ts/snowpack.config.js" .
+    mkdir src
+    cp "$TEMPLATEPATH/web-ts/index.html" ./src
+    cp "$TEMPLATEPATH/web-ts/styles.css" ./src
+    cp "$TEMPLATEPATH/web-ts/main.ts" ./src
+    mkdir src/assets
+    cp "$TEMPLATEPATH/web-ts/favicon.ico" ./src/assets
+    cp "$TEMPLATEPATH/web-ts/seo-og.jpg" ./src/assets
+    cp "$TEMPLATEPATH/web-ts/seo-twitter.jpg" ./src/assets
+    printf "\n"
+    initNpm
+    npm install --save-dev snowpack
+    npmAddScript "start" "snowpack dev"
+    npmAddScript "build" "snowpack build"
+    installPrettier
+    printf "🎊$grn Vanilla TypeScript Web Project Created!$white\n"
+    printf "\n"
+}
+
 # ---- Node Setup Function ----
 
 function setUpNode {
@@ -299,6 +326,8 @@ elif [ "$2" = "--fast-ds" ]; then
     setUpFASTDesignSystem $1
 elif [ "$2" = "--web" ]; then
     setUpVanillaWeb $1
+elif [ "$2" = "--web-ts" ]; then
+    setUpVanillaTypeScriptWeb $1
 elif [ "$2" = "--node" ]; then
     setUpNode $1
 elif [ "$2" = "--python" ]; then
