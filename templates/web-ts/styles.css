@@ -1,0 +1,35 @@
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  background-color: hsl(0, 0%, 95%);
+}
+
+main {
+  text-align: center;
+  padding: 0 2rem 4rem 2rem;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+
+iframe {
+  border-radius: 7px;
+  box-shadow: 5px 5px 20px hsl(0, 0%, 65%);
+}
+
+#joke-container {
+  border-radius: 7px;
+  box-shadow: 0 6px 10px hsl(0, 0%, 65%);
+  width: 50vw;
+  margin: auto;
+  padding: 1rem;
+}
